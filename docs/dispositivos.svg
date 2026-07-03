@@ -1,0 +1,342 @@
+<svg viewBox="0 0 1240 2830" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="mB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2F5D76"/>
+    </marker>
+    <marker id="mG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8896A3"/>
+    </marker>
+    <marker id="mR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#A34A38"/>
+    </marker>
+    <style>
+      .h1   { font-size: 42px; font-weight: bold; fill: #22303C; }
+      .h2   { font-size: 17px; fill: #5B6B7A; }
+      .disc { font-size: 13px; font-style: italic; fill: #8896A3; }
+      .mono { font-family: ui-monospace, 'SF Mono', Consolas, Menlo, monospace; }
+      .barT { font-size: 21px; font-weight: bold; fill: #FFFFFF; }
+      .barS { font-size: 14px; font-style: italic; fill: #D8E4EC; }
+      .tag  { font-size: 16px; fill: #5B6B7A; }
+      .emph { font-size: 17px; font-weight: bold; fill: #24506B; }
+      .stN  { font-size: 20px; font-weight: bold; fill: #24506B; }
+      .bd   { font-size: 15px; fill: #37424D; }
+      .bds  { font-size: 13.5px; fill: #5B6B7A; }
+      .red  { font-size: 12.5px; fill: #A34A38; }
+      .pT   { font-size: 19px; font-weight: bold; fill: #24506B; }
+      .pF   { font-size: 12px; fill: #5B6B7A; }
+      .pB   { font-size: 14.5px; fill: #37424D; }
+      .num  { font-size: 17px; font-weight: bold; fill: #FFFFFF; }
+      .chipT{ font-size: 11px; fill: #24506B; }
+      .lbl  { font-size: 14.5px; fill: #5B6B7A; }
+      .it   { font-size: 14px; font-style: italic; fill: #7A8894; }
+      .nodeT{ font-size: 14.5px; fill: #37424D; }
+      .term { font-size: 21px; font-weight: bold; }
+    </style>
+  </defs>
+
+  <rect width="1240" height="2830" fill="#FCFCFA"/>
+
+  <!-- ======================= encabezado ======================= -->
+  <text x="70" y="64" class="h1">Los dos dispositivos de análisis</text>
+  <text x="70" y="96" class="h2">El esquema de evaluación del sistema: cómo una lectura del contexto se convierte en una decisión — o en un «no» con causa.</text>
+  <text x="70" y="121" class="disc">Documento público · esquema genérico · ejemplos ficticios · sin datos reales</text>
+
+  <!-- ======================= franja de contexto ======================= -->
+  <rect x="70" y="140" width="1100" height="118" rx="10" fill="#F7F8F9" stroke="#D5DCE2" stroke-width="1.2"/>
+  <text x="94" y="172" class="bd"><tspan font-weight="bold" fill="#24506B">Esto es una parte del proyecto, no el proyecto: </tspan>el sistema completo es un pipeline de siete etapas con contratos tipados.</text>
+  <text x="94" y="194" class="bd">Este infograma abre solo dos de ellas — los dos dispositivos de análisis.</text>
+  <!-- mini pipeline -->
+  <g font-size="11.5">
+    <rect x="94"  y="212" width="136" height="30" rx="15" fill="#FFFFFF" stroke="#B9C4CD" stroke-width="1.2"/>
+    <text x="162" y="231" text-anchor="middle" fill="#7A8894">detección</text>
+    <rect x="244" y="212" width="136" height="30" rx="15" fill="#2F5D76"/>
+    <text x="312" y="231" text-anchor="middle" fill="#FFFFFF" font-weight="bold">validación</text>
+    <rect x="394" y="212" width="136" height="30" rx="15" fill="#2F5D76"/>
+    <text x="462" y="231" text-anchor="middle" fill="#FFFFFF" font-weight="bold">evaluación</text>
+    <rect x="544" y="212" width="136" height="30" rx="15" fill="#FFFFFF" stroke="#B9C4CD" stroke-width="1.2"/>
+    <text x="612" y="231" text-anchor="middle" fill="#7A8894">planificación</text>
+    <rect x="694" y="212" width="136" height="30" rx="15" fill="#FFFFFF" stroke="#B9C4CD" stroke-width="1.2"/>
+    <text x="762" y="231" text-anchor="middle" fill="#7A8894">ejecución</text>
+    <rect x="844" y="212" width="136" height="30" rx="15" fill="#FFFFFF" stroke="#B9C4CD" stroke-width="1.2"/>
+    <text x="912" y="231" text-anchor="middle" fill="#7A8894">registro</text>
+    <rect x="994" y="212" width="136" height="30" rx="15" fill="#FFFFFF" stroke="#B9C4CD" stroke-width="1.2"/>
+    <text x="1062" y="231" text-anchor="middle" fill="#7A8894">métricas</text>
+  </g>
+
+  <!-- ======================= primitivas ======================= -->
+  <rect x="70" y="282" width="1100" height="42" rx="8" fill="#EDF2F6"/>
+  <text x="94" y="310" font-size="19" font-weight="bold" fill="#24506B">ANTES DE LEER — LAS TRES FUNCIONES (LAS «PRIMITIVAS»)</text>
+  <text x="70" y="352" class="tag">Los dispositivos no traen lógica de análisis propia: instancian tres funciones compartidas del marco, con firma y reglas fijas.</text>
+  <text x="70" y="374" class="tag">Conocerlas hace legible todo lo que sigue.</text>
+
+  <!-- card RECOLECTAR -->
+  <rect x="70" y="392" width="346" height="212" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <text x="94" y="426" class="mono pT">RECOLECTAR</text>
+  <text x="94" y="448" class="mono pF">( dominio, criterio )  -&gt;  colección</text>
+  <line x1="94" y1="460" x2="392" y2="460" stroke="#E3E9EE"/>
+  <text x="94" y="484" class="pB">Junta todo lo que cumple un criterio</text>
+  <text x="94" y="504" class="pB">dentro de un dominio declarado.</text>
+  <text x="94" y="524" class="pB">La colección vacía es un resultado</text>
+  <text x="94" y="544" class="pB">válido: «no existe candidato» es una</text>
+  <text x="94" y="564" class="pB">respuesta, no un error.</text>
+
+  <!-- card REFUTAR -->
+  <rect x="447" y="392" width="346" height="212" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <text x="471" y="426" class="mono pT">REFUTAR</text>
+  <text x="471" y="448" class="mono pF">( objeto )  -&gt;  sobrevive / cae</text>
+  <line x1="471" y1="460" x2="769" y2="460" stroke="#E3E9EE"/>
+  <text x="471" y="484" class="pB">No busca confirmar: busca tumbar, en</text>
+  <text x="471" y="504" class="pB">tres frentes fijos — realidad (¿los</text>
+  <text x="471" y="524" class="pB">hechos acompañan?), causalidad (¿existe</text>
+  <text x="471" y="544" class="pB">el mecanismo?) y adversario (¿qué diría</text>
+  <text x="471" y="564" class="pB">quien está del otro lado?). Sobrevivir</text>
+  <text x="471" y="584" class="pB">abona confianza; no da certeza.</text>
+
+  <!-- card MEDIR-GAP -->
+  <rect x="824" y="392" width="346" height="212" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <text x="848" y="426" class="mono pT">MEDIR-GAP</text>
+  <text x="848" y="448" class="mono pF">( esperado ± banda, observado )  -&gt;  veredicto</text>
+  <line x1="848" y1="460" x2="1146" y2="460" stroke="#E3E9EE"/>
+  <text x="848" y="484" class="pB">Compara lo esperado contra lo</text>
+  <text x="848" y="504" class="pB">observado. La banda de tolerancia la</text>
+  <text x="848" y="524" class="pB">declara quien deriva el valor esperado,</text>
+  <text x="848" y="544" class="pB">nunca la función. El veredicto no lleva</text>
+  <text x="848" y="564" class="pB">valencia: dice «−40 %, por debajo»,</text>
+  <text x="848" y="584" class="pB">jamás «deterioro» o «mejora».</text>
+
+  <text x="70" y="636" class="it">Instanciar, no copiar: cada dispositivo usa estas funciones con sus propios parámetros — la firma y las reglas no cambian.</text>
+
+  <!-- ======================= dispositivo 1 ======================= -->
+  <rect x="70" y="660" width="1100" height="44" rx="8" fill="#2F5D76"/>
+  <text x="94" y="690" class="barT">DISPOSITIVO 1 · VALIDACIÓN DE CONTEXTO</text>
+  <text x="1146" y="689" text-anchor="end" class="barS">responde: ¿puedo confiar en esta lectura?</text>
+
+  <text x="70" y="736" class="tag">Valida una lectura del contexto («el fenómeno F está ocurriendo») antes de que se construyan hipótesis sobre ella. El método:</text>
+  <text x="70" y="758" class="tag">derivar cómo deberían comportarse los actores si la lectura fuera correcta, y contrastarlo con cómo se comportan de verdad.</text>
+
+  <!-- paso 1 -->
+  <rect x="70" y="782" width="535" height="172" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <circle cx="106" cy="820" r="18" fill="#2F5D76"/>
+  <text x="106" y="826" text-anchor="middle" class="num">1</text>
+  <text x="138" y="827" class="stN">Fijar la lectura</text>
+  <text x="94" y="864" class="bd">Poner la afirmación en una frase contrastable sobre el</text>
+  <text x="94" y="886" class="bd">presente. Todo el dispositivo se construye contra esa</text>
+  <text x="94" y="908" class="bd">frase: si no puede formularse, no puede validarse.</text>
+
+  <!-- paso 2 -->
+  <rect x="635" y="782" width="535" height="172" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <circle cx="671" cy="820" r="18" fill="#2F5D76"/>
+  <text x="671" y="826" text-anchor="middle" class="num">2</text>
+  <text x="703" y="827" class="stN">Poblar actores y variables</text>
+  <rect x="1032" y="806" width="114" height="22" rx="5" fill="#EDF2F6" stroke="#C3D2DC"/>
+  <text x="1089" y="821" text-anchor="middle" class="mono chipT">RECOLECTAR</text>
+  <text x="659" y="864" class="bd">¿Quiénes participan del fenómeno — entidad central,</text>
+  <text x="659" y="886" class="bd">clientes, proveedores, competidores, reguladores — y qué</text>
+  <text x="659" y="908" class="bd">variables concretas y medibles describen a cada uno?</text>
+  <text x="659" y="932" class="red">si no hay conducta medible: «no validable por conducta» — no se inventa un espejo</text>
+
+  <!-- paso 3 -->
+  <rect x="70" y="980" width="535" height="172" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <circle cx="106" cy="1018" r="18" fill="#2F5D76"/>
+  <text x="106" y="1024" text-anchor="middle" class="num">3</text>
+  <text x="138" y="1025" class="stN">Calibrar el presente</text>
+  <text x="94" y="1062" class="bd">¿Qué es conducta razonable HOY, no en el pasado del</text>
+  <text x="94" y="1084" class="bd">dominio? Sin esta calibración temporal, la divergencia</text>
+  <text x="94" y="1106" class="bd">se mide contra un estándar anacrónico y sale falseada.</text>
+
+  <!-- paso 4 -->
+  <rect x="635" y="980" width="535" height="172" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <circle cx="671" cy="1018" r="18" fill="#2F5D76"/>
+  <text x="671" y="1024" text-anchor="middle" class="num">4</text>
+  <text x="703" y="1025" class="stN">Derivar el «espejo»</text>
+  <text x="659" y="1062" class="bd">¿Qué haría racionalmente cada actor si la lectura fuera</text>
+  <text x="659" y="1084" class="bd">correcta? Cada conducta esperada lleva su cantidad y su</text>
+  <text x="659" y="1106" class="bd">banda de tolerancia. Lo que no puede derivarse se asienta</text>
+  <text x="659" y="1128" class="bd">como «ausente»: un agujero honesto, no un invento.</text>
+
+  <!-- paso 5 -->
+  <rect x="70" y="1178" width="535" height="172" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <circle cx="106" cy="1216" r="18" fill="#2F5D76"/>
+  <text x="106" y="1222" text-anchor="middle" class="num">5</text>
+  <text x="138" y="1223" class="stN">Observar la conducta efectiva</text>
+  <text x="94" y="1260" class="bd">¿Qué están haciendo hoy, de verdad, esos actores? Cada</text>
+  <text x="94" y="1282" class="bd">dato con su magnitud y su estatuto: verificado, estimado</text>
+  <text x="94" y="1304" class="bd">o ausente. Se contrastan dos presentes — el esperado y</text>
+  <text x="94" y="1326" class="bd">el efectivo; no se extrapola el pasado.</text>
+
+  <!-- paso 6 -->
+  <rect x="635" y="1178" width="535" height="172" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <circle cx="671" cy="1216" r="18" fill="#2F5D76"/>
+  <text x="671" y="1222" text-anchor="middle" class="num">6</text>
+  <text x="703" y="1223" class="stN">Contrastar: el mapa tipado</text>
+  <rect x="972" y="1202" width="174" height="22" rx="5" fill="#EDF2F6" stroke="#C3D2DC"/>
+  <text x="1059" y="1217" text-anchor="middle" class="mono chipT">REFUTAR + MEDIR-GAP</text>
+  <text x="659" y="1260" class="bd">Por cada celda actor × variable: ¿la conducta esperada</text>
+  <text x="659" y="1282" class="bd">está presente? Si no: gap cualitativo. Si está, ¿la</text>
+  <text x="659" y="1304" class="bd">magnitud cae en la banda? Si no: gap cuantitativo.</text>
+  <text x="659" y="1326" class="bd">El mapa no interpreta ni opina: el desvío es la señal.</text>
+
+  <!-- router de plano -->
+  <rect x="70" y="1376" width="1100" height="122" rx="10" fill="#F7F8F9" stroke="#D5DCE2" stroke-width="1.2"/>
+  <rect x="70" y="1376" width="6" height="122" fill="#2F5D76"/>
+  <text x="100" y="1408" class="emph">EL ROUTER DE PLANO — antes de usar un gap, se lo atribuye</text>
+  <text x="100" y="1434" class="bd">¿Cambió el mundo (plano objeto: el gap ES la señal) o el espejo estaba mal derivado (plano observador: recalibrar y correr</text>
+  <text x="100" y="1456" class="bd">otra vuelta)? El ciclo es iterativo y el corte es dialógico: el operador decide en cada vuelta si refinar o cerrar. Solo se</text>
+  <text x="100" y="1478" class="bd">re-corre si la corrección invalidó el contraste hecho — un gap firme del plano objeto no se re-corre: el mapa ES el hallazgo.</text>
+
+  <!-- terminales D1 -->
+  <text x="70" y="1540" font-size="15" font-weight="bold" fill="#5B6B7A">TERMINALES:</text>
+  <rect x="196" y="1518" width="180" height="32" rx="8" fill="#2F5D76"/>
+  <text x="286" y="1539" text-anchor="middle" class="mono" font-size="13" fill="#FFFFFF">lectura validada</text>
+  <rect x="396" y="1518" width="182" height="32" rx="8" fill="#FFFFFF" stroke="#2F5D76" stroke-width="1.6"/>
+  <text x="487" y="1539" text-anchor="middle" class="mono" font-size="13" fill="#24506B">gaps como señal</text>
+  <rect x="598" y="1518" width="226" height="32" rx="8" fill="#FBF0EC" stroke="#C89383" stroke-width="1.6"/>
+  <text x="711" y="1539" text-anchor="middle" class="mono" font-size="13" fill="#A34A38">no-validada { causa }</text>
+
+  <!-- ======================= conexión ======================= -->
+  <line x1="620" y1="1578" x2="620" y2="1748" stroke="#2F5D76" stroke-width="3.5" marker-end="url(#mB)"/>
+  <rect x="452" y="1642" width="336" height="30" rx="6" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <text x="620" y="1662" text-anchor="middle" class="mono" font-size="13" fill="#24506B">terminal { validada | gaps | no-validada }</text>
+
+  <text x="70" y="1612" class="emph">El dispositivo 1 responde:</text>
+  <text x="70" y="1642" font-size="19" font-style="italic" fill="#37424D">«¿Puedo confiar en esta lectura?»</text>
+  <text x="70" y="1686" class="lbl">La validación no es un peaje: la evaluación puede</text>
+  <text x="70" y="1708" class="lbl">correr sobre una lectura sin validar, marcada como tal.</text>
+
+  <text x="836" y="1612" class="emph">El dispositivo 2 responde:</text>
+  <text x="836" y="1642" font-size="19" font-style="italic" fill="#37424D">«¿Y ahora qué hago con ella?»</text>
+  <text x="836" y="1686" class="lbl">Derivación aguas arriba: si la evaluación descubre</text>
+  <text x="836" y="1708" class="lbl">que su hipótesis se apoya en una lectura cruda y</text>
+  <text x="836" y="1730" class="lbl">portante, propone bajar a validarla primero.</text>
+  <line x1="1196" y1="1740" x2="1196" y2="1590" stroke="#8896A3" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#mG)"/>
+
+  <!-- ======================= dispositivo 2 ======================= -->
+  <rect x="70" y="1772" width="1100" height="44" rx="8" fill="#2F5D76"/>
+  <text x="94" y="1802" class="barT">DISPOSITIVO 2 · EVALUACIÓN</text>
+  <text x="1146" y="1801" text-anchor="end" class="barS">responde: ¿qué hago con esta lectura?</text>
+
+  <text x="70" y="1848" class="tag">Su objeto es cerrar un triángulo de tres vértices — la hipótesis (una ley «si pasa A, B debería seguir, con cierta probabilidad»),</text>
+  <text x="70" y="1870" class="tag">el conjunto de candidatos y el activo particular. Se entra por el vértice que ya se tiene; los otros dos son la incógnita.</text>
+
+  <text x="70" y="1906" class="emph">Y no es una lista de pasos: es un grafo dirigido. El camino se decide nodo a nodo, y cada transición se anuncia</text>
+  <text x="70" y="1930" class="emph">y espera confirmación antes de ejecutarse — el grafo nunca corre solo de punta a punta.</text>
+
+  <!-- puertas -->
+  <rect x="70" y="1954" width="346" height="92" rx="10" fill="#F2F6F9" stroke="#2F5D76" stroke-width="1.6"/>
+  <text x="94" y="1986" class="pT">PUERTA CONTEXTO</text>
+  <text x="94" y="2010" class="bds">dato: un evento o tema</text>
+  <text x="94" y="2030" class="bds">incógnitas: hipótesis y activo</text>
+
+  <rect x="447" y="1954" width="346" height="92" rx="10" fill="#F2F6F9" stroke="#2F5D76" stroke-width="1.6"/>
+  <text x="471" y="1986" class="pT">PUERTA HIPÓTESIS</text>
+  <text x="471" y="2010" class="bds">dato: una ley «si A, entonces B»</text>
+  <text x="471" y="2030" class="bds">incógnitas: candidatos y activo</text>
+
+  <rect x="824" y="1954" width="346" height="92" rx="10" fill="#F2F6F9" stroke="#2F5D76" stroke-width="1.6"/>
+  <text x="848" y="1986" class="pT">PUERTA ACTIVO</text>
+  <text x="848" y="2010" class="bds">dato: un activo puntual</text>
+  <text x="848" y="2030" class="bds">incógnita: su hipótesis</text>
+
+  <!-- flechas puertas -> fila A, con cortes dialógicos -->
+  <g stroke="#2F5D76" stroke-width="2">
+    <line x1="243" y1="2046" x2="243" y2="2076" marker-end="url(#mB)"/>
+    <line x1="620" y1="2046" x2="620" y2="2076" marker-end="url(#mB)"/>
+    <line x1="997" y1="2046" x2="997" y2="2076" marker-end="url(#mB)"/>
+  </g>
+  <g stroke="#B07C2A" stroke-width="2">
+    <line x1="233" y1="2058" x2="253" y2="2058"/><line x1="233" y1="2064" x2="253" y2="2064"/>
+    <line x1="610" y1="2058" x2="630" y2="2058"/><line x1="610" y1="2064" x2="630" y2="2064"/>
+    <line x1="987" y1="2058" x2="1007" y2="2058"/><line x1="987" y1="2064" x2="1007" y2="2064"/>
+  </g>
+
+  <!-- fila A -->
+  <rect x="70" y="2080" width="346" height="92" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <text x="94" y="2110" class="nodeT">RECOLECTAR: ¿qué está expuesto al</text>
+  <text x="94" y="2130" class="nodeT">evento? — sin prejuzgar la dirección</text>
+  <text x="94" y="2154" class="red">vacío = negación «sin conjunto»</text>
+
+  <rect x="447" y="2080" width="346" height="92" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <text x="471" y="2110" class="nodeT">REFUTAR la ley aislada, antes de</text>
+  <text x="471" y="2130" class="nodeT">mirar ningún activo</text>
+  <text x="471" y="2154" class="red">cae = negación «sin hipótesis: corazonada»</text>
+
+  <rect x="824" y="2080" width="346" height="92" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <text x="848" y="2110" class="nodeT">Recuperar o construir la hipótesis</text>
+  <text x="848" y="2130" class="nodeT">que justifica mirar este activo</text>
+
+  <!-- flechas fila A -> fila B -->
+  <g stroke="#2F5D76" stroke-width="2">
+    <line x1="243" y1="2172" x2="243" y2="2202" marker-end="url(#mB)"/>
+    <line x1="620" y1="2172" x2="620" y2="2202" marker-end="url(#mB)"/>
+    <line x1="997" y1="2172" x2="997" y2="2202" marker-end="url(#mB)"/>
+  </g>
+  <g stroke="#B07C2A" stroke-width="2">
+    <line x1="233" y1="2184" x2="253" y2="2184"/><line x1="233" y1="2190" x2="253" y2="2190"/>
+    <line x1="610" y1="2184" x2="630" y2="2184"/><line x1="610" y1="2190" x2="630" y2="2190"/>
+    <line x1="987" y1="2184" x2="1007" y2="2184"/><line x1="987" y1="2190" x2="1007" y2="2190"/>
+  </g>
+
+  <!-- fila B -->
+  <rect x="70" y="2206" width="346" height="92" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <text x="94" y="2236" class="nodeT">Por cada candidato: la hipótesis y su</text>
+  <text x="94" y="2256" class="nodeT">refutación nacen fusionadas — a favor</text>
+  <text x="94" y="2276" class="nodeT">y en contra, con simetría</text>
+
+  <rect x="447" y="2206" width="346" height="92" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <text x="471" y="2236" class="nodeT">RECOLECTAR: ¿quiénes cumplen la</text>
+  <text x="471" y="2256" class="nodeT">condición A? Luego REFUTAR cada uno</text>
+  <text x="471" y="2280" class="red">vacío = negación «sin conjunto»</text>
+
+  <rect x="824" y="2206" width="346" height="92" rx="10" fill="#FFFFFF" stroke="#C3D2DC" stroke-width="1.4"/>
+  <text x="848" y="2236" class="nodeT">REFUTAR: la ley y el nombre — la</text>
+  <text x="848" y="2256" class="nodeT">hipótesis general, instanciada en</text>
+  <text x="848" y="2276" class="nodeT">este activo particular</text>
+
+  <!-- flechas fila B -> cola -->
+  <g stroke="#2F5D76" stroke-width="2">
+    <line x1="243" y1="2298" x2="243" y2="2328" marker-end="url(#mB)"/>
+    <line x1="620" y1="2298" x2="620" y2="2328" marker-end="url(#mB)"/>
+    <line x1="997" y1="2298" x2="997" y2="2328" marker-end="url(#mB)"/>
+  </g>
+  <g stroke="#B07C2A" stroke-width="2">
+    <line x1="233" y1="2310" x2="253" y2="2310"/><line x1="233" y1="2316" x2="253" y2="2316"/>
+    <line x1="610" y1="2310" x2="630" y2="2310"/><line x1="610" y1="2316" x2="630" y2="2316"/>
+    <line x1="987" y1="2310" x2="1007" y2="2310"/><line x1="987" y1="2316" x2="1007" y2="2316"/>
+  </g>
+
+  <!-- cola común -->
+  <rect x="70" y="2332" width="1100" height="128" rx="10" fill="#F2F6F9" stroke="#2F5D76" stroke-width="1.6"/>
+  <text x="94" y="2364" class="emph">COLA COMÚN — las tres rutas convergen acá</text>
+  <text x="94" y="2392" class="bd">Contraste en profundidad: el caso a favor y el caso en contra con el mismo rigor — un «en contra» anémico invalida la corrida.</text>
+  <text x="94" y="2414" class="bd">Tipificación del movimiento: ¿el interés sobrevive si le quito el dato del precio? Si no, es persecución de precio: se rechaza.</text>
+  <text x="94" y="2436" class="bd">Chequeo de lente: ¿ya está en cartera? Eso define qué acciones son posibles (incorporar, acumular, reducir, sostener, vigilar).</text>
+
+  <!-- ramas a terminales -->
+  <line x1="400" y1="2460" x2="345" y2="2496" stroke="#2F5D76" stroke-width="2" marker-end="url(#mB)"/>
+  <line x1="840" y1="2460" x2="895" y2="2496" stroke="#A34A38" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#mR)"/>
+
+  <!-- terminales D2 -->
+  <rect x="70" y="2500" width="540" height="104" rx="10" fill="#FFFFFF" stroke="#2F5D76" stroke-width="2"/>
+  <text x="94" y="2538" class="mono term" fill="#24506B">tripleta { activo, hipótesis, acción }</text>
+  <text x="94" y="2566" class="bds">la salida accionable: los tres vértices del triángulo,</text>
+  <text x="94" y="2586" class="bds">cerrados y validados, con sus supuestos explícitos.</text>
+
+  <rect x="650" y="2500" width="520" height="104" rx="10" fill="#FBF0EC" stroke="#C89383" stroke-width="2"/>
+  <text x="674" y="2538" class="mono term" fill="#A34A38">negación { causa }</text>
+  <text x="674" y="2566" class="bds">diagnóstica: sin conjunto · sin hipótesis · sin activo.</text>
+  <text x="674" y="2586" class="bds">Saber qué vértice falló es información, no vacío.</text>
+
+  <!-- leyenda cortes -->
+  <g stroke="#B07C2A" stroke-width="2">
+    <line x1="74" y1="2634" x2="94" y2="2634"/><line x1="74" y1="2640" x2="94" y2="2640"/>
+  </g>
+  <text x="106" y="2642" class="it">Las marcas dobles sobre las flechas son cortes dialógicos: la transición se anuncia y espera el OK del operador.</text>
+
+  <!-- ======================= firma ======================= -->
+  <line x1="70" y1="2664" x2="1170" y2="2664" stroke="#D5DCE2" stroke-width="1"/>
+  <text x="70" y="2698" font-size="20" font-weight="bold" fill="#22303C">Tomás José Martínez</text>
+  <text x="70" y="2724" class="lbl">Este esquema es una parte del proyecto «Cómo estructurar decisiones bajo presión», publicado en LinkedIn. El sistema</text>
+  <text x="70" y="2746" class="lbl">completo — pipeline de siete etapas, contratos tipados, modelo de datos, salvaguardas y caso de uso ficticio — está en:</text>
+  <text x="70" y="2776" class="mono" font-size="17" font-weight="bold" fill="#24506B">github.com/AmEndeDerTage/arquitectura-proceso-decision</text>
+  <text x="70" y="2806" class="disc">Documento público — esquema genérico. No contiene posiciones, montos, plataformas ni operaciones reales.</text>
+</svg>
