@@ -1,0 +1,317 @@
+<svg viewBox="0 0 1760 1050" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="mBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2F5D76"/>
+    </marker>
+    <marker id="mNeg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#A34A38"/>
+    </marker>
+    <marker id="mGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8896A3"/>
+    </marker>
+    <style>
+      .title    { font-size: 24px; font-weight: bold; fill: #22303C; }
+      .subtitle { font-size: 12.5px; fill: #5B6B7A; }
+      .note     { font-size: 11px; fill: #5B6B7A; }
+      .noteI    { font-size: 11px; fill: #7A8894; font-style: italic; }
+      .modT     { font-size: 13px; font-weight: bold; fill: #24506B; }
+      .modR     { font-size: 8.5px; fill: #7A8894; letter-spacing: 0.8px; }
+      .modB     { font-size: 10.5px; fill: #37424D; }
+      .perT     { font-size: 12.5px; font-weight: bold; fill: #56503F; }
+      .perB     { font-size: 10.5px; fill: #4A463C; }
+      .mono     { font-family: ui-monospace, 'SF Mono', Consolas, Menlo, monospace; }
+      .chipT    { font-size: 10px; fill: #24506B; }
+      .negT     { font-size: 9.5px; fill: #7C3B2E; }
+      .railT    { font-size: 12px; font-weight: bold; fill: #8F4636; }
+      .railS    { font-size: 9.5px; font-style: italic; fill: #9A6252; }
+      .lbl      { font-size: 9.5px; fill: #7A8894; font-style: italic; }
+      .gate     { font-size: 9.5px; font-weight: bold; fill: #7A5714; }
+      .cap      { font-size: 9px; fill: #9A8348; font-style: italic; }
+    </style>
+  </defs>
+
+  <!-- fondo -->
+  <rect x="0" y="0" width="1760" height="1050" fill="#FFFFFF"/>
+
+  <!-- ===================== encabezado ===================== -->
+  <text x="26" y="44" class="title">Arquitectura de proceso — Sistema de gestión de decisiones de inversión</text>
+  <text x="26" y="66" class="subtitle">Pipeline de cinco etapas analíticas más ejecución humana, con contratos tipados en cada interfaz y negación como output de primera clase.</text>
+  <text x="26" y="84" class="noteI">Documento público · arquitectura genérica · todos los datos de la documentación asociada son ficticios</text>
+
+  <!-- leyenda -->
+  <rect x="1250" y="24" width="484" height="72" rx="4" fill="#FAFBFC" stroke="#D5DCE2" stroke-width="1"/>
+  <line x1="1264" y1="44" x2="1300" y2="44" stroke="#2F5D76" stroke-width="2" marker-end="url(#mBlue)"/>
+  <text x="1308" y="48" class="note">flujo principal (tipado)</text>
+  <line x1="1264" y1="63" x2="1300" y2="63" stroke="#A34A38" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#mNeg)"/>
+  <text x="1308" y="67" class="note">negación (output válido)</text>
+  <line x1="1264" y1="82" x2="1300" y2="82" stroke="#8896A3" stroke-width="1.4" stroke-dasharray="3 4" marker-end="url(#mGray)"/>
+  <text x="1308" y="86" class="note">retroalimentación / derivación</text>
+  <polygon points="1478,44 1490,52 1478,60 1466,52" fill="#FBF4E4" stroke="#B07C2A" stroke-width="1.4"/>
+  <text x="1498" y="56" class="note">gate del operador</text>
+  <rect x="1466" y="70" width="24" height="14" rx="3" fill="#EDF2F6" stroke="#C3D2DC"/>
+  <text x="1498" y="81" class="note">contrato de interfaz</text>
+
+  <!-- ===================== retroalimentación métricas → detección ===================== -->
+  <path d="M 1649 378 V 112 H 121 V 376" fill="none" stroke="#8896A3" stroke-width="1.4" stroke-dasharray="3 4" marker-end="url(#mGray)"/>
+  <rect x="797" y="102" width="166" height="20" rx="4" fill="#FFFFFF" stroke="#C3D2DC"/>
+  <text x="880" y="116" text-anchor="middle" class="mono chipT">pulso{estado de conjunto}</text>
+  <text x="880" y="135" text-anchor="middle" class="lbl">alimenta el paso 0 de la detección — contexto del conjunto, no lente de lectura</text>
+
+  <!-- ===================== validación de contexto (aguas arriba) ===================== -->
+  <rect x="200" y="140" width="270" height="150" rx="5" fill="#F2F6F9" stroke="#2F5D76" stroke-width="1.4"/>
+  <text x="216" y="164" class="modT">VALIDACIÓN DE CONTEXTO</text>
+  <text x="216" y="180" class="modR">AGUAS ARRIBA DE LA EVALUACIÓN</text>
+  <line x1="216" y1="188" x2="454" y2="188" stroke="#D5DCE2"/>
+  <text x="216" y="204" class="modB">Contrasta conducta esperada (espejo</text>
+  <text x="216" y="218" class="modB">con bandas declaradas) vs. efectiva:</text>
+  <text x="216" y="232" class="modB">el desvío es la señal. Mapa tipado por</text>
+  <text x="216" y="246" class="modB">actor × variable: coincide / gap cual. /</text>
+  <text x="216" y="260" class="modB">gap cuant. Router de plano: objeto</text>
+  <text x="216" y="274" class="modB">(señal) u observador (recalibrar).</text>
+
+  <!-- ===================== primitivas compartidas ===================== -->
+  <rect x="560" y="140" width="360" height="115" rx="5" fill="#F7F8F9" stroke="#8896A3" stroke-width="1.2" stroke-dasharray="6 4"/>
+  <text x="576" y="164" class="modT" fill="#4A5762">PRIMITIVAS COMPARTIDAS</text>
+  <text x="576" y="180" class="modR">REPERTORIO DEL MARCO — LOS MÓDULOS INSTANCIAN, NO COPIAN</text>
+  <line x1="576" y1="188" x2="904" y2="188" stroke="#D5DCE2"/>
+  <text x="576" y="205" class="modB">RECOLECTAR (dominio, criterio) → colección · vacío = válido</text>
+  <text x="576" y="221" class="modB">REFUTAR — terna fija: realidad / causalidad / adversario</text>
+  <text x="576" y="237" class="modB">MEDIR-GAP (esperado ± banda, observado) → veredicto sin valencia</text>
+
+  <!-- conectores primitivas -->
+  <line x1="560" y1="200" x2="474" y2="200" stroke="#8896A3" stroke-width="1.2" stroke-dasharray="3 4" marker-end="url(#mGray)"/>
+  <path d="M 700 255 L 514 376" fill="none" stroke="#8896A3" stroke-width="1.2" stroke-dasharray="3 4" marker-end="url(#mGray)"/>
+  <text x="648" y="296" class="lbl">instancian, no copian</text>
+
+  <!-- ===================== flechas validación ===================== -->
+  <path d="M 170 378 L 246 294" fill="none" stroke="#2F5D76" stroke-width="1.6" marker-end="url(#mBlue)"/>
+  <text x="30" y="374" class="lbl">lectura en cuestión</text>
+  <line x1="400" y1="290" x2="400" y2="376" stroke="#2F5D76" stroke-width="1.6" marker-end="url(#mBlue)"/>
+  <text x="392" y="318" text-anchor="end" class="mono chipT">terminal{validada | gaps | no-validada}</text>
+  <path d="M 490 378 L 465 294" fill="none" stroke="#8896A3" stroke-width="1.4" stroke-dasharray="3 4" marker-end="url(#mGray)"/>
+  <text x="500" y="300" class="lbl">derivación</text>
+  <text x="500" y="313" class="lbl">aguas arriba</text>
+
+  <!-- ===================== contratos de interfaz (chips) ===================== -->
+  <rect x="210" y="344" width="112" height="20" rx="4" fill="#EDF2F6" stroke="#C3D2DC"/>
+  <text x="266" y="358" text-anchor="middle" class="mono chipT">hallazgo{puerta}</text>
+  <line x1="266" y1="364" x2="266" y2="468" stroke="#C3D2DC" stroke-width="1"/>
+
+  <rect x="489" y="344" width="228" height="20" rx="4" fill="#EDF2F6" stroke="#C3D2DC"/>
+  <text x="603" y="358" text-anchor="middle" class="mono chipT">tripleta{activo, hipótesis, acción}</text>
+  <line x1="603" y1="364" x2="603" y2="441" stroke="#C3D2DC" stroke-width="1"/>
+
+  <rect x="852" y="344" width="240" height="20" rx="4" fill="#EDF2F6" stroke="#C3D2DC"/>
+  <text x="972" y="358" text-anchor="middle" class="mono chipT">acción{qué, plazo, condición, límite}</text>
+  <line x1="972" y1="364" x2="972" y2="441" stroke="#C3D2DC" stroke-width="1"/>
+
+  <rect x="1172" y="344" width="203" height="20" rx="4" fill="#EDF2F6" stroke="#C3D2DC"/>
+  <text x="1274" y="358" text-anchor="middle" class="mono chipT">fill{cantidad, precio, momento}</text>
+  <line x1="1274" y1="364" x2="1274" y2="468" stroke="#C3D2DC" stroke-width="1"/>
+
+  <rect x="1473" y="344" width="112" height="20" rx="4" fill="#EDF2F6" stroke="#C3D2DC"/>
+  <text x="1529" y="358" text-anchor="middle" class="mono chipT">evento{Δ estado}</text>
+  <line x1="1529" y1="364" x2="1529" y2="468" stroke="#C3D2DC" stroke-width="1"/>
+
+  <!-- reloj de cierre -->
+  <text x="1636" y="334" text-anchor="end" class="lbl">cierre de jornada por reloj → regeneración total</text>
+  <line x1="1600" y1="340" x2="1600" y2="376" stroke="#8896A3" stroke-width="1.2" stroke-dasharray="3 4" marker-end="url(#mGray)"/>
+
+  <!-- ===================== fila principal del pipeline ===================== -->
+
+  <!-- DETECCIÓN -->
+  <rect x="26" y="380" width="190" height="195" rx="5" fill="#FFFFFF" stroke="#2F5D76" stroke-width="1.5"/>
+  <text x="40" y="404" class="modT">DETECCIÓN Y RUTEO</text>
+  <text x="40" y="420" class="modR">PRE-EVALUATIVO · N PASADAS / DÍA</text>
+  <line x1="40" y1="428" x2="202" y2="428" stroke="#D5DCE2"/>
+  <text x="40" y="444" class="modB">Roster fijo, no recortable:</text>
+  <text x="40" y="458" class="modB">posiciones + vigilancia.</text>
+  <text x="40" y="472" class="modB">Detecta y rutea; no evalúa.</text>
+  <text x="40" y="486" class="modB">Cada posición, bajo su propia</text>
+  <text x="40" y="500" class="modB">hipótesis (nunca una lectura</text>
+  <text x="40" y="514" class="modB">común del portafolio).</text>
+  <text x="40" y="528" class="modB">Paso 0: pulso del conjunto.</text>
+  <text x="40" y="542" class="modB">Triggers: leídos de la ficha</text>
+  <text x="40" y="556" class="modB">viva, nunca de memoria.</text>
+
+  <!-- EVALUACIÓN -->
+  <rect x="316" y="380" width="200" height="195" rx="5" fill="#FFFFFF" stroke="#2F5D76" stroke-width="1.5"/>
+  <text x="330" y="404" class="modT">EVALUACIÓN</text>
+  <text x="330" y="420" class="modR">TRES PUERTAS DE ENTRADA</text>
+  <line x1="330" y1="428" x2="502" y2="428" stroke="#D5DCE2"/>
+  <text x="330" y="444" class="modB">Contexto · hipótesis · activo:</text>
+  <text x="330" y="458" class="modB">el output es siempre del</text>
+  <text x="330" y="472" class="modB">mismo tipo.</text>
+  <text x="330" y="486" class="modB">Refutación en tres frentes:</text>
+  <text x="330" y="500" class="modB">realidad · causalidad ·</text>
+  <text x="330" y="514" class="modB">adversario.</text>
+  <text x="330" y="528" class="modB">Transiciones con detención y</text>
+  <text x="330" y="542" class="modB">confirmación (cortes dialógicos).</text>
+  <text x="330" y="556" class="modB">No dimensiona ni ejecuta.</text>
+
+  <!-- gate 1 -->
+  <polygon points="603,445 635,477 603,509 571,477" fill="#FBF4E4" stroke="#B07C2A" stroke-width="1.5"/>
+  <text x="603" y="481" text-anchor="middle" class="gate">¿actuar?</text>
+  <text x="603" y="527" text-anchor="middle" class="cap">gate del operador</text>
+
+  <!-- PLANIFICACIÓN -->
+  <rect x="690" y="380" width="195" height="195" rx="5" fill="#FFFFFF" stroke="#2F5D76" stroke-width="1.5"/>
+  <text x="704" y="404" class="modT">PLANIFICACIÓN DE</text>
+  <text x="704" y="420" class="modT">EJECUCIÓN</text>
+  <text x="704" y="436" class="modR">TIMING CONDICIONADO</text>
+  <line x1="704" y1="444" x2="871" y2="444" stroke="#D5DCE2"/>
+  <text x="704" y="460" class="modB">Convierte la tripleta en una</text>
+  <text x="704" y="474" class="modB">acción de 4 componentes:</text>
+  <text x="704" y="488" class="modB">qué · plazo · condición ·</text>
+  <text x="704" y="502" class="modB">límite de la condición.</text>
+  <text x="704" y="516" class="modB">El límite evita que la</text>
+  <text x="704" y="530" class="modB">disciplina de espera se</text>
+  <text x="704" y="544" class="modB">vuelva parálisis: vencido,</text>
+  <text x="704" y="558" class="modB">la acción se libera.</text>
+
+  <!-- gate 2 -->
+  <polygon points="972,445 1004,477 972,509 940,477" fill="#FBF4E4" stroke="#B07C2A" stroke-width="1.5"/>
+  <text x="972" y="481" text-anchor="middle" class="gate">colocar</text>
+  <text x="972" y="527" text-anchor="middle" class="cap">gate del operador</text>
+
+  <!-- EJECUCIÓN -->
+  <rect x="1059" y="380" width="180" height="195" rx="5" fill="#FBF4E4" stroke="#B07C2A" stroke-width="1.5"/>
+  <text x="1073" y="404" class="modT" fill="#7A5714">EJECUCIÓN</text>
+  <text x="1073" y="420" class="modR" fill="#9A8348">GATE HUMANO — OPERADOR</text>
+  <line x1="1073" y1="428" x2="1225" y2="428" stroke="#E4D6B4"/>
+  <text x="1073" y="444" class="modB">El sistema arma la orden</text>
+  <text x="1073" y="458" class="modB">completa: instrumento,</text>
+  <text x="1073" y="472" class="modB">cantidad, precio, chequeos</text>
+  <text x="1073" y="486" class="modB">de libro y de duplicados.</text>
+  <text x="1073" y="500" class="modB">El operador la coloca</text>
+  <text x="1073" y="514" class="modB">manualmente; el agente</text>
+  <text x="1073" y="528" class="modB">nunca dispara órdenes.</text>
+  <text x="1073" y="542" class="modB">Verificación post-fill contra</text>
+  <text x="1073" y="556" class="modB">el registro del broker.</text>
+
+  <!-- REGISTRO -->
+  <rect x="1309" y="380" width="185" height="195" rx="5" fill="#FFFFFF" stroke="#2F5D76" stroke-width="1.5"/>
+  <text x="1323" y="404" class="modT">REGISTRO</text>
+  <text x="1323" y="420" class="modR">POST-EJECUCIÓN</text>
+  <line x1="1323" y1="428" x2="1480" y2="428" stroke="#D5DCE2"/>
+  <text x="1323" y="444" class="modB">Asienta lo que ya ocurrió;</text>
+  <text x="1323" y="458" class="modB">no opera ni decide.</text>
+  <text x="1323" y="472" class="modB">Captura EN el momento la</text>
+  <text x="1323" y="486" class="modB">atribución del fill a su lote</text>
+  <text x="1323" y="500" class="modB">(dato perecedero,</text>
+  <text x="1323" y="514" class="modB">irrecuperable después).</text>
+  <text x="1323" y="528" class="modB">Ledger append-only +</text>
+  <text x="1323" y="542" class="modB">acreditaciones de flujo</text>
+  <text x="1323" y="556" class="modB">contra lo estimado.</text>
+
+  <!-- MÉTRICAS -->
+  <rect x="1564" y="380" width="170" height="195" rx="5" fill="#FFFFFF" stroke="#2F5D76" stroke-width="1.5"/>
+  <text x="1578" y="404" class="modT">MÉTRICAS</text>
+  <text x="1578" y="420" class="modT">DERIVADAS</text>
+  <text x="1578" y="436" class="modR">DASHBOARD REACTIVO</text>
+  <line x1="1578" y1="444" x2="1720" y2="444" stroke="#D5DCE2"/>
+  <text x="1578" y="460" class="modB">Se regenera ante todo</text>
+  <text x="1578" y="474" class="modB">cambio de insumo:</text>
+  <text x="1578" y="488" class="modB">incremental por evento,</text>
+  <text x="1578" y="502" class="modB">total por reloj al cierre.</text>
+  <text x="1578" y="516" class="modB">Unidad: lote funcional</text>
+  <text x="1578" y="530" class="modB">(mecanismo + horizonte</text>
+  <text x="1578" y="544" class="modB">+ criterio de éxito).</text>
+  <text x="1578" y="558" class="modB">Cortes: activo, cluster,</text>
+  <text x="1578" y="572" class="modB" font-size="10">hipótesis, etiqueta, tramo.</text>
+
+  <!-- flechas del flujo principal -->
+  <line x1="216" y1="477" x2="312" y2="477" stroke="#2F5D76" stroke-width="2" marker-end="url(#mBlue)"/>
+  <line x1="516" y1="477" x2="567" y2="477" stroke="#2F5D76" stroke-width="2" marker-end="url(#mBlue)"/>
+  <line x1="635" y1="477" x2="686" y2="477" stroke="#2F5D76" stroke-width="2" marker-end="url(#mBlue)"/>
+  <line x1="885" y1="477" x2="936" y2="477" stroke="#2F5D76" stroke-width="2" marker-end="url(#mBlue)"/>
+  <line x1="1004" y1="477" x2="1055" y2="477" stroke="#2F5D76" stroke-width="2" marker-end="url(#mBlue)"/>
+  <line x1="1239" y1="477" x2="1305" y2="477" stroke="#2F5D76" stroke-width="2" marker-end="url(#mBlue)"/>
+  <line x1="1494" y1="477" x2="1560" y2="477" stroke="#2F5D76" stroke-width="2" marker-end="url(#mBlue)"/>
+
+  <!-- ===================== rail de negaciones ===================== -->
+  <line x1="121" y1="575" x2="121" y2="631" stroke="#A34A38" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#mNeg)"/>
+  <line x1="416" y1="575" x2="416" y2="631" stroke="#A34A38" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#mNeg)"/>
+  <line x1="787" y1="575" x2="787" y2="631" stroke="#A34A38" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#mNeg)"/>
+
+  <rect x="26" y="635" width="1214" height="80" rx="5" fill="#FBF0EC" stroke="#C89383" stroke-width="1.3"/>
+  <text x="44" y="659" class="railT">NEGACIONES TIPADAS — outputs de primera clase</text>
+  <text x="440" y="659" class="railS">toda negación se asienta con causa y puede sembrar trabajo diferido; nada se descarta en silencio</text>
+
+  <rect x="60" y="678" width="151" height="20" rx="4" fill="#F7E3DC" stroke="#D8AB9C"/>
+  <text x="135" y="692" text-anchor="middle" class="mono negT">pasada vacía · detección</text>
+  <rect x="235" y="678" width="192" height="20" rx="4" fill="#F7E3DC" stroke="#D8AB9C"/>
+  <text x="331" y="692" text-anchor="middle" class="mono negT">no-validada{causa} · validación</text>
+  <rect x="451" y="678" width="174" height="20" rx="4" fill="#F7E3DC" stroke="#D8AB9C"/>
+  <text x="538" y="692" text-anchor="middle" class="mono negT">negación{causa} · evaluación</text>
+  <rect x="649" y="678" width="244" height="20" rx="4" fill="#F7E3DC" stroke="#D8AB9C"/>
+  <text x="771" y="692" text-anchor="middle" class="mono negT">límite vencido → liberar · planificación</text>
+
+  <!-- rail → persistencia -->
+  <line x1="846" y1="715" x2="846" y2="796" stroke="#A34A38" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#mNeg)"/>
+  <text x="856" y="762" class="lbl">siembra pendientes</text>
+  <line x1="1176" y1="715" x2="1176" y2="796" stroke="#A34A38" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#mNeg)"/>
+  <text x="1186" y="762" class="lbl">asiento con causa</text>
+
+  <!-- registro → ledger -->
+  <line x1="1440" y1="575" x2="1440" y2="796" stroke="#2F5D76" stroke-width="2" marker-end="url(#mBlue)"/>
+  <rect x="1448" y="678" width="209" height="20" rx="4" fill="#EDF2F6" stroke="#C3D2DC"/>
+  <text x="1552" y="692" text-anchor="middle" class="mono chipT">asiento{lote, atribución, patas}</text>
+
+  <!-- ledger → métricas (derivación) -->
+  <line x1="1690" y1="796" x2="1690" y2="579" stroke="#8896A3" stroke-width="1.4" stroke-dasharray="3 4" marker-end="url(#mGray)"/>
+  <text x="1683" y="716" text-anchor="end" class="lbl">derivación</text>
+  <text x="1683" y="730" text-anchor="end" class="lbl">reactiva</text>
+
+  <!-- ===================== capa de persistencia ===================== -->
+  <text x="26" y="787" class="perT">PERSISTENCIA — fuente de verdad: todo módulo lee la fuente viva antes de razonar (fuente-first); nada se reconstruye de memoria.</text>
+
+  <rect x="26" y="800" width="300" height="150" rx="5" fill="#F5F3EE" stroke="#8A8272" stroke-width="1.3"/>
+  <text x="42" y="824" class="perT">BASE NORMATIVA</text>
+  <line x1="42" y1="834" x2="312" y2="834" stroke="#DDD8CC"/>
+  <text x="42" y="852" class="perB">Reglas · mecanismos · catálogo de</text>
+  <text x="42" y="866" class="perB">etiquetas. CRUD formal con códigos</text>
+  <text x="42" y="880" class="perB">secuenciales; toda edición entra en</text>
+  <text x="42" y="894" class="perB">lotes completos (todo-o-nada) y se</text>
+  <text x="42" y="908" class="perB">verifica tras aplicarse.</text>
+
+  <rect x="366" y="800" width="300" height="150" rx="5" fill="#F5F3EE" stroke="#8A8272" stroke-width="1.3"/>
+  <text x="382" y="824" class="perT">FICHAS DE ACTIVO (estado vivo)</text>
+  <line x1="382" y1="834" x2="652" y2="834" stroke="#DDD8CC"/>
+  <text x="382" y="852" class="perB">Una por activo: posición · hipótesis</text>
+  <text x="382" y="866" class="perB">con derrotadores explícitos · plan</text>
+  <text x="382" y="880" class="perB">(núcleo/excedente, topes, triggers,</text>
+  <text x="382" y="894" class="perB">banda de materialidad).</text>
+  <text x="382" y="908" class="perB">Leídas en vivo por los módulos.</text>
+
+  <rect x="706" y="800" width="280" height="150" rx="5" fill="#F5F3EE" stroke="#8A8272" stroke-width="1.3"/>
+  <text x="722" y="824" class="perT">BACKLOG / AGENDA</text>
+  <line x1="722" y1="834" x2="972" y2="834" stroke="#DDD8CC"/>
+  <text x="722" y="852" class="perB">Trabajo diferido a frío (sin fecha)</text>
+  <text x="722" y="866" class="perB">y pendientes con caducidad.</text>
+  <text x="722" y="880" class="perB">Destino obligado de los cambios</text>
+  <text x="722" y="894" class="perB">normativos detectados con el</text>
+  <text x="722" y="908" class="perB">mercado abierto (modo caliente).</text>
+
+  <rect x="1026" y="800" width="300" height="150" rx="5" fill="#F5F3EE" stroke="#8A8272" stroke-width="1.3"/>
+  <text x="1042" y="824" class="perT">LOG (append-only)</text>
+  <line x1="1042" y1="834" x2="1312" y2="834" stroke="#DDD8CC"/>
+  <text x="1042" y="852" class="perB">Una línea por cambio documental:</text>
+  <text x="1042" y="866" class="perB">fecha · qué cambió · razón.</text>
+  <text x="1042" y="880" class="perB">Reconciliación al cierre de sesión:</text>
+  <text x="1042" y="894" class="perB">todo documento tocado tiene su</text>
+  <text x="1042" y="908" class="perB">línea; el historial nunca se edita.</text>
+
+  <rect x="1366" y="800" width="368" height="150" rx="5" fill="#F5F3EE" stroke="#8A8272" stroke-width="1.3"/>
+  <text x="1382" y="824" class="perT">LEDGER (append-only)</text>
+  <line x1="1382" y1="834" x2="1720" y2="834" stroke="#DDD8CC"/>
+  <text x="1382" y="852" class="perB">Fills con atribución por lote y tramo · series de</text>
+  <text x="1382" y="866" class="perB">precio y anclas de referencia con su banda.</text>
+  <text x="1382" y="880" class="perB">Invariante permanente: Σ posiciones del ledger</text>
+  <text x="1382" y="894" class="perB">= posición real informada por el broker.</text>
+
+  <!-- ===================== pie ===================== -->
+  <text x="26" y="990" class="note">Lectura: el flujo principal corre de izquierda a derecha; cada interfaz porta un contrato tipado (chips). Las salidas de negación no son fallas: son terminales válidas con causa,</text>
+  <text x="26" y="1006" class="note">con el mismo destino documental que las afirmativas. Los gates (rombos ámbar) marcan los puntos donde la autoridad de decisión es exclusivamente humana.</text>
+  <text x="26" y="1030" class="noteI">Documento público — arquitectura genérica; no contiene posiciones, montos, plataformas ni operaciones reales.</text>
+</svg>
